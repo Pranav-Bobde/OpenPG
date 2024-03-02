@@ -9,9 +9,9 @@ export default function Title() {
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        <h4 className="text-xl font-semibold tracking-tight ml-2">OpenPG</h4>
+        <h4 className="text-md font-semibold tracking-tight ml-2">OpenPG</h4>
       </>
-      <SquarePen className="ml-auto" />
+      <SquarePen className="ml-auto" size={20} />
     </div>
   );
 }

@@ -1,21 +1,17 @@
-"use client";
 import Link from "next/link";
-import Title from "@/components/ui/Title";
-import { Separator } from "./ui/separator";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+import Title from "@/components/sidebar/Title";
+import { Separator } from "../ui/separator";
 import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "./ui/button";
+import { Button, buttonVariants } from "../ui/button";
 
-export default function Sidebar() {
+type SidebarProps = {
+  className?: string;
+};
+
+export default function Sidebar({ className }: SidebarProps) {
   return (
-    <div className="h-screen w-1/5 border-solid border-black border-2">
-      <div className="my-3 ml-2 mr-5">
+    <div className={cn("h-screen", className)}>
+      <div className="my-4 ml-2 mr-5">
         <Title />
       </div>
       <Separator className="my-5" />
