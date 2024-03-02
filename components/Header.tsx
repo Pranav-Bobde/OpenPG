@@ -10,7 +10,10 @@ export default function Header({ className }: HeaderProps) {
   return (
     <>
       <div
-        className={cn("flex items-center justify-between px-4 pb-3", className)}
+        className={cn(
+          "flex items-center justify-between px-4 pr-6 pb-3",
+          className
+        )}
       >
         <SelectModel />
         <ToggleTheme />

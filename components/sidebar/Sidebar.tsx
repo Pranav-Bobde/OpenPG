@@ -14,7 +14,7 @@ export default function Sidebar({ className }: SidebarProps) {
       <div className="my-4 ml-2 mr-5">
         <Title />
       </div>
-      <Separator className="my-5" />
+      <Separator className="my-8 invisible" />
       <Link
         href="/chat/1"
         legacyBehavior
