@@ -4,10 +4,9 @@ import { SelectModel } from "./SelectModel";
 
 type HeaderProps = {
   className?: string;
-  children: React.ReactNode;
 };
 
-export default function Header({ className, children }: HeaderProps) {
+export default function Header({ className }: HeaderProps) {
   return (
     <>
       <div
@@ -16,7 +15,6 @@ export default function Header({ className, children }: HeaderProps) {
         <SelectModel />
         <ToggleTheme />
       </div>
-      <div className="px-4">{children}</div>
     </>
   );
 }

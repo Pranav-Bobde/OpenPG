@@ -37,9 +37,8 @@ export default function RootLayout({
         >
           <div className="grid grid-cols-10 grid-rows-11">
             <Sidebar className="col-span-2 row-span-11" />
-            <Header className="col-span-8 row-span-1">
-              {children}
-            </Header>
+            <Header className="col-span-8 row-span-1" />
+            <div className="col-span-8 row-span-10 px-4">{children}</div>
           </div>
         </ThemeProvider>
       </body>
