@@ -20,7 +20,7 @@ type ProfileDropDownProps = {
 export default function ProfileDropDown({ user }: ProfileDropDownProps) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="w-full">
+      <DropdownMenuTrigger className="w-full" asChild>
         <Button variant="ghost" className="gap-4 w-full justify-start py-6">
           <Avatar className="p-2 rounded-full justify-center items-center shadow-inner bg-slate-100 dark:bg-gray-800">
             {user?.given_name?.[0]}
