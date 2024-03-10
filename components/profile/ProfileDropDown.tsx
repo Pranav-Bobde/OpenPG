@@ -14,10 +14,11 @@ import { Button } from "../ui/button";
 import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/dist/types";
 
 type ProfileDropDownProps = {
-  user: KindeUser;
+  user: KindeUser | null;
 };
 
 export default function ProfileDropDown({ user }: ProfileDropDownProps) {
+  
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="w-full" asChild>

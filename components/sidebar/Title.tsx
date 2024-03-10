@@ -7,8 +7,8 @@ export default function Title() {
     <div className="flex items-center">
       <>
         <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarImage src="" />
+          <AvatarFallback>OP</AvatarFallback>
         </Avatar>
         <h4 className="text-md font-semibold tracking-tight ml-2">OpenPG</h4>
       </>
