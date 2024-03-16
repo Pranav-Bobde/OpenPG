@@ -1,15 +1,15 @@
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { chatsTable } from "./chats";
-import { relations } from "drizzle-orm";
+import { relations, sql } from "drizzle-orm";
 
 export const messagesTable = sqliteTable("messages", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
   chatId: text("chat_id")
     .notNull()
     .references(() => chatsTable.id),
-  role: text("role", { enum: ["ai", "user"] }).notNull(),
+  role: text("role", { enum: ["assistant", "user"] }).notNull(),
   content: text("content").notNull(),
-  createdAt: text("created_at").default("CURRENT_TIMESTAMP"),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
   updatedAt: text("updated_at").notNull(),
 });
 
