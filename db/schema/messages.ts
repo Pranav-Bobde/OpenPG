@@ -3,7 +3,9 @@ import { chatsTable } from "./chats";
 import { relations, sql } from "drizzle-orm";
 
 export const messagesTable = sqliteTable("messages", {
-  id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID().toString()),
   chatId: text("chat_id")
     .notNull()
     .references(() => chatsTable.id),
