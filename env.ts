@@ -11,6 +11,10 @@ export const env = createEnv({
     KINDE_POST_LOGIN_REDIRECT_URL: z.string().url(),
     DATABASE_URL: z.string().url(),
     DATABASE_AUTH_TOKEN: z.string().min(1),
+    AZURE_OPENAI_API_KEY: z.string().min(1),
+    AZURE_OPENAI_BASE_URL: z.string().min(1),
+    AZURE_OPENAI_API_VERSION: z.string().min(1),
+    AZURE_OPENAI_MODEL: z.string().min(1),
   },
   experimental__runtimeEnv: {},
 });
