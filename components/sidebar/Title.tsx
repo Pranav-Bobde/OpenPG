@@ -7,7 +7,7 @@ export default function Title() {
     <div className="flex items-center">
       <>
         <Avatar>
-          <AvatarImage src="" />
+          <AvatarImage src="favicon.png" />
           <AvatarFallback>OP</AvatarFallback>
         </Avatar>
         <h4 className="text-md font-semibold tracking-tight ml-2">OpenPG</h4>
