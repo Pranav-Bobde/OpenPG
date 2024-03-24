@@ -4,7 +4,7 @@ import { createMessage, getMessages } from "@/actions/actions";
 import Chat from "@/components/chat/Chat";
 import ChatInput from "@/components/chat/ChatInput";
 import { useChat } from "ai/react";
-import { Suspense, useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { ScrollArea } from "../ui/scroll-area";
 
 type Message = Awaited<ReturnType<typeof getMessages>>[0];
@@ -33,7 +33,7 @@ export default function ChatWithID({ chatId, msgs }: ChatWithIDProps) {
 
   return (
     <>
-      <div className="flex flex-col justify-end h-full mx-44">
+      <div className="flex flex-col justify-end h-full md:mx-44">
         <ScrollArea className="h-[600px] rounded-md pr-4">
           <Chat messages={messages} />
         </ScrollArea>

@@ -11,10 +11,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="grid grid-cols-10 grid-rows-11">
-          <Sidebar className="col-span-2 row-span-11" />
-          <Header className="col-span-8 row-span-1" />
-          <div className="col-span-8 row-span-10 px-4">{children}</div>
+        <div className="min-w-[350px] flex-1 grid grid-cols-1 grid-rows-11 md:grid-cols-10">
+          <Sidebar className="hidden row-span-11 md:block md:col-span-2" />
+          <Header className="col-span-1 row-span-1 md:col-span-8" />
+          <div className="col-span-1 row-span-11 px-4 md:col-span-8">
+            {children}
+          </div>
         </div>
       </body>
     </html>
