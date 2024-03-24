@@ -2,18 +2,29 @@
 
 import { cn } from "@/lib/utils";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { SendHorizonal } from "lucide-react";
 import { createChat, createMessage } from "@/actions/actions";
 
+import type { Message, CreateMessage } from "ai/react";
+import type { ChatRequestOptions } from "ai";
+
 type ChatInputProps = {
   className?: string;
   chatId?: string;
+  append?: (
+    message: Message | CreateMessage,
+    chatRequestOptions?: ChatRequestOptions | undefined
+  ) => Promise<string | null | undefined>;
 };
 
-export default function ChatInput({ className, chatId }: ChatInputProps) {
+export default function ChatInput({
+  className,
+  chatId,
+  append,
+}: ChatInputProps) {
   const [message, setMessage] = useState("");
   const [rows, setRows] = useState(1);
   const maxRows = 20;
@@ -24,19 +35,23 @@ export default function ChatInput({ className, chatId }: ChatInputProps) {
     setRows(newRows);
   }, [message]);
 
-  function handleSubmit() {
-    if (message.trim().length > 0) {
-      console.log("submit chatId: ", chatId);
-      if (chatId) {
-        console.log("submit chatId: ", chatId);
-        createMessage(chatId, message);
-        setMessage("");
-        return;
-      }
+  async function handleSubmit() {
+    if (!message.trim().length) return;
 
-      console.log("calling createChat")
-      createChat(message);
+    if (!chatId) {
+      const id = await createChat(message);
+      await createMessage(id, message, "user", true);
+      setMessage("");
+      return;
     }
+
+    const msg = await createMessage(chatId, message, "user", false);
+    append &&
+      append({
+        role: msg.role,
+        content: msg.content,
+      });
+    setMessage("");
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {

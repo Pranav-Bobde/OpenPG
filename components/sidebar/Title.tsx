@@ -1,6 +1,7 @@
 import { SquarePen } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function Title() {
   return (
@@ -13,7 +14,9 @@ export default function Title() {
         <h4 className="text-md font-semibold tracking-tight ml-2">OpenPG</h4>
       </>
       <Button variant={"ghost"} className="ml-auto">
-        <SquarePen size={20} />
+        <Link href={"/"}>
+          <SquarePen size={20} />
+        </Link>
       </Button>
     </div>
   );
