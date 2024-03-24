@@ -20,10 +20,13 @@ export async function getChats(userId: string) {
   return chats;
 }
 
-export async function createChat(message: string) {
+export async function createChat(content: string) {
   const { getUser } = getKindeServerSession();
+
   const user = await getUser();
-  console.log("creating chat for user w msg: ", user?.id, message);
+
+  console.log("CREATE CHAT");
+  console.log("CONTENT: ", content);
 
   if (!user) {
     throw new Error("user not found");
@@ -33,33 +36,24 @@ export async function createChat(message: string) {
     .insert(chatsTable)
     .values({
       userId: user.id,
-      name: message.substring(0, 20),
+      name: content.substring(0, 20),
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     })
     .returning({ id: chatsTable.id });
 
-  const [msg] = await db
-    .insert(messagesTable)
-    .values({
-      chatId: chat.id,
-      content: message,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      role: "user",
-    })
-    .returning();
-
-  console.log("MESSAGE CREATED: ", msg);
-
-  redirect(`/chat/${chat.id}`, RedirectType.replace);
+  return chat.id;
 }
 
 export async function getMessages(chatId: string) {
   console.log("Get messages for chat: ", chatId);
 
   const messages = await db
-    .select()
+    .select({
+      id: messagesTable.id,
+      role: messagesTable.role,
+      content: messagesTable.content,
+    })
     .from(messagesTable)
     .where(eq(messagesTable.chatId, chatId));
 
@@ -68,20 +62,31 @@ export async function getMessages(chatId: string) {
   return messages;
 }
 
-export async function createMessage(chatId: string, message: string) {
-  console.log("creating message for chat w msg: ", chatId, message);
+export async function createMessage(
+  chatId: string,
+  content: string,
+  role: "user" | "assistant",
+  newChat: boolean = false
+) {
+  console.log("CREATE MESSAGE");
+  console.log("CHATID: ", chatId);
+  console.log("CONTENT: ", content);
 
   const [msg] = await db
     .insert(messagesTable)
     .values({
-      chatId,
-      content: message,
+      chatId: chatId,
+      content: content,
+      role,
       updatedAt: new Date().toISOString(),
-      role: "user",
     })
     .returning();
 
   console.log("MESSAGE CREATED: ", msg);
 
-  revalidatePath("/chat/" + chatId);
+  if (newChat) {
+    redirect(`/chat/${chatId}`, RedirectType.replace);
+  }
+
+  return msg;
 }
