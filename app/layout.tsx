@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { SidebarProvider } from "@/components/sidebar-status-provider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -33,7 +34,7 @@ export default function RootLayout({
           defaultTheme="system"
           disableTransitionOnChange
         >
-          {children}
+          <SidebarProvider>{children}</SidebarProvider>
         </ThemeProvider>
       </body>
     </html>
