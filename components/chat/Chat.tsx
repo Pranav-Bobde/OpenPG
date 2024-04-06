@@ -25,7 +25,7 @@ export default function Chat({ className, messages }: ChatProps) {
       {messages.map((message, index) => (
         <div
           key={index}
-          className={cn("flex gap-4 whitespace-pre-wrap mt-4", message.role)}
+          className={cn("flex gap-4 whitespace-pre-wrap mt-4")}
         >
           <Avatar className="justify-center">
             {(message.role === "assistant" && "AI") ||
