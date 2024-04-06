@@ -11,7 +11,7 @@ export default function Header({ className }: HeaderProps) {
     <>
       <div
         className={cn(
-          "flex items-center justify-between px-4 pr-6 pb-3",
+          "flex items-center justify-between px-4 pr-6 pb-3 pt-4",
           className
         )}
       >

@@ -33,11 +33,11 @@ export default function ChatWithID({ chatId, msgs }: ChatWithIDProps) {
 
   return (
     <>
-      <div className="flex flex-col justify-end h-full md:mx-44">
-        <ScrollArea className="h-[600px] rounded-md pr-4 mb-7">
+      <div className="flex flex-col h-full md:mx-auto md:max-w-[850px]">
+        <ScrollArea className="h-[76vh] rounded-md pr-4 mb-7">
           <Chat messages={messages} />
         </ScrollArea>
-        <ChatInput chatId={chatId} append={append} className="mb-8" />
+        <ChatInput chatId={chatId} append={append} className="mb-8 mt-auto" />
       </div>
     </>
   );
