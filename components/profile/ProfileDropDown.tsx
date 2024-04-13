@@ -22,12 +22,14 @@ export default function ProfileDropDown({ user }: ProfileDropDownProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="w-full" asChild>
-        <Button variant="ghost" className="gap-4 w-full justify-start py-6">
-          <Avatar className="p-2 rounded-full justify-center items-center shadow-inner bg-slate-100 dark:bg-gray-800">
-            {user?.given_name?.[0]}
-            {user?.family_name?.[0]}
+        <Button variant="ghost" className="gap-2 justify-between">
+          <Avatar className="p-2 rounded-full bg-slate-100 dark:bg-gray-800">
+            {user?.given_name?.[0].toUpperCase()}
+            {user?.family_name?.[0].toUpperCase()}
           </Avatar>
-          {user?.given_name} {user?.family_name}
+          <span className="overflow-hidden text-ellipsis">
+            {user?.given_name} {user?.family_name}
+          </span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

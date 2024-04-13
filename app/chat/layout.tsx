@@ -15,7 +15,7 @@ export default function RootLayout({
       <body>
         <div className="min-h-screen max-w-[1600px] flex flex-row mx-auto">
           <SideBarWrapper>
-            <Sidebar />
+            <Sidebar className="max-w-[250px]" />
           </SideBarWrapper>
           <SidebarButton />
           <div className="basis-full">
