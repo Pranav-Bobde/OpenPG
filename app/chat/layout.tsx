@@ -1,7 +1,7 @@
 import "@/app/globals.css";
 
 import Sidebar from "@/components/sidebar/Sidebar";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import { SidebarButton } from "@/components/sidebar/SidebarButton";
 import { SideBarWrapper } from "@/components/sidebar/SidebarWrapper";
 
