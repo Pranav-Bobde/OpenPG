@@ -8,6 +8,7 @@ import ProfileSection from "../profile/ProfileSection";
 import { getChats } from "@/actions/actions";
 import { Suspense } from "react";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { UserChatsLoader } from "./UserChatsLoader";
 
 type SidebarProps = {
   className?: string;
@@ -17,6 +18,7 @@ async function UserChats() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
+  await (() => new Promise((res) => setTimeout(() => res("Hello!"), 2000)))();
   console.log("User in Sidebar: ", user);
   const chats = user ? await getChats(user.id) : [];
   console.log("User Chats in Sidebar: ", chats);
@@ -47,14 +49,14 @@ async function UserChats() {
 export default function Sidebar({ className }: SidebarProps) {
   return (
     <div className={cn("h-screen", className)}>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-full relative">
         <div>
-          <div className="my-4 ml-2 mr-5">
+          <div className="my-4 ml-2">
             <Title />
           </div>
           <Separator className="my-8 invisible" />
 
-          <Suspense fallback={<>Loading...</>}>
+          <Suspense fallback={<UserChatsLoader />}>
             <UserChats />
           </Suspense>
         </div>
