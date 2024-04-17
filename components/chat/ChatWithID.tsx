@@ -33,7 +33,7 @@ export default function ChatWithID({ chatId, msgs }: ChatWithIDProps) {
 
   return (
     <>
-      <div className="flex flex-col h-full md:mx-auto md:max-w-[850px]">
+      <div className="flex flex-col h-full w-full md:mx-auto md:max-w-[850px]">
         <ScrollArea className="h-[76vh] rounded-md pr-4 mb-7">
           <Chat messages={messages} />
         </ScrollArea>

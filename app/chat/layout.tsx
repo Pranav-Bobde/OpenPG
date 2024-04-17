@@ -14,14 +14,16 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="min-h-screen max-w-[1600px] flex flex-row mx-auto">
-          <SideBarWrapper>
-            <Sidebar className="max-w-[250px]" />
-          </SideBarWrapper>
-          <SidebarButton />
+          <div className="hidden md:flex">
+            <SideBarWrapper>
+              <Sidebar className="max-w-[250px]" />
+            </SideBarWrapper>
+            <SidebarButton />
+          </div>
           <div className="basis-full">
             <div className="h-full flex flex-col">
               <Header />
-              <div className="basis-full">{children}</div>
+              <div className="basis-full px-4">{children}</div>
             </div>
           </div>
         </div>

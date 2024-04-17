@@ -63,16 +63,16 @@ export default function ChatInput({
   }
 
   return (
-    <div className={cn("flex gap-2", className)}>
+    <div className={cn("flex items-center gap-2 relative", className)}>
       <Textarea
         onKeyDown={handleKeyDown}
         rows={rows}
         value={message}
-        className="text-xl resize-none min-h-min"
+        className="text-xl resize-none min-h-min pr-16"
         placeholder="Type your message here..."
         onChange={(e) => setMessage(e.target.value)}
       />
-      <Button variant={"ghost"} className="py-4" onClick={handleSubmit}>
+      <Button variant={"ghost"} className="py-4 absolute right-0" onClick={handleSubmit}>
         <SendHorizonal />
       </Button>
     </div>
