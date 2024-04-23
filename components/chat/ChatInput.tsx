@@ -68,11 +68,11 @@ export default function ChatInput({
         onKeyDown={handleKeyDown}
         rows={rows}
         value={message}
-        className="text-xl resize-none min-h-min pr-16"
+        className="text-xl resize-none min-h-min pr-16 bg-muted border border-slate-600 focus:border-none"
         placeholder="Type your message here..."
         onChange={(e) => setMessage(e.target.value)}
       />
-      <Button variant={"ghost"} className="py-4 absolute right-0" onClick={handleSubmit}>
+      <Button variant={"ghost"} className="py-4 absolute right-1 bottom-1" onClick={handleSubmit}>
         <SendHorizonal />
       </Button>
     </div>

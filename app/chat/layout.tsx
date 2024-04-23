@@ -13,17 +13,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="min-h-screen max-w-[1600px] flex flex-row mx-auto">
+        <div className="min-h-svh max-w-[1980px] flex flex-row mx-auto">
           <div className="hidden md:flex">
             <SideBarWrapper>
-              <Sidebar className="max-w-[250px]" />
+              <Sidebar className="w-[220px]" />
             </SideBarWrapper>
+          </div>
+          <div className="hidden md:flex bg-muted">
             <SidebarButton />
           </div>
-          <div className="basis-full">
+          <div className="basis-full bg-muted">
             <div className="h-full flex flex-col">
               <Header />
-              <div className="basis-full px-4">{children}</div>
+              <div className="container basis-full px-4">{children}</div>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ import {
 
 export default function page() {
   return (
-    <div className="h-screen w-screen">
+    <div className="min-h-svh w-svw">
       <div className="hidden h-full w-full md:grid md:grid-cols-3">
         <div className="bg-black md:col-span-2 md:flex md:items-center md:justify-center">
           <div className="text-white text-4xl text-center">OpenPG</div>
