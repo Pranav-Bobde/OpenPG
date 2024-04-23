@@ -30,7 +30,7 @@ export default function page() {
         </div>
       </div>
 
-      <div className="h-full flex flex-col justify-center bg-black gap-12">
+      <div className="h-full flex flex-col justify-center bg-black gap-12 md:hidden">
         <div className="text-white text-4xl flex justify-center">
           <Avatar className="h-28 w-28">
             <AvatarImage src="/favicon.png" height={50} width={50} />
