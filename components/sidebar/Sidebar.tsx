@@ -18,7 +18,6 @@ async function UserChats() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  await (() => new Promise((res) => setTimeout(() => res("Hello!"), 2000)))();
   console.log("User in Sidebar: ", user);
   const chats = user ? await getChats(user.id) : [];
   console.log("User Chats in Sidebar: ", chats);
