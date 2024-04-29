@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function SelectModel() {
-  const [model, setModel] = React.useState("GPT4");
+  const [model, setModel] = React.useState("GPT3.5");
 
   return (
     <DropdownMenu>

@@ -22,7 +22,7 @@ export default function ProfileDropDown({ user }: ProfileDropDownProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="w-full" asChild>
-        <Button variant="ghost" className="gap-2 justify-between">
+        <Button variant="ghost" className="gap-2 justify-start">
           <Avatar className="p-2 rounded-full bg-slate-100 dark:bg-gray-800">
             {user?.given_name?.[0].toUpperCase()}
             {user?.family_name?.[0].toUpperCase()}

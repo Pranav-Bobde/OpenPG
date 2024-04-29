@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Title() {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center gap-2">
       <>
         <Avatar>
           <AvatarImage src="favicon.png" />

@@ -16,7 +16,7 @@ export default function RootLayout({
         <div className="min-h-svh max-w-[1980px] flex flex-row mx-auto">
           <div className="hidden md:flex">
             <SideBarWrapper>
-              <Sidebar className="w-[220px]" />
+              <Sidebar className="w-[260px] px-1" />
             </SideBarWrapper>
           </div>
           <div className="hidden md:flex bg-muted">
