@@ -19,10 +19,10 @@ export default function RootLayout({
               <Sidebar className="w-[260px] px-1" />
             </SideBarWrapper>
           </div>
-          <div className="hidden md:flex bg-muted">
+          <div className="hidden md:flex">
             <SidebarButton />
           </div>
-          <div className="basis-full bg-muted">
+          <div className="basis-full ">
             <div className="h-full flex flex-col">
               <Header />
               <div className="container basis-full px-4">{children}</div>

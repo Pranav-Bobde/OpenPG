@@ -47,7 +47,7 @@ function UserChats() {
               legacyBehavior
               className={cn(
                 buttonVariants({ variant: "default", size: "sm" }),
-                "dark:bg-muted dark:text-white dark:hover:bg-muted dark:hover:text-white",
+                "dark: dark:text-white dark:hover: dark:hover:text-white",
                 "justify-start"
               )}
             >

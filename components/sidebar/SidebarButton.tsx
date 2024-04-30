@@ -13,7 +13,7 @@ export function SidebarButton() {
       {setIsOpen ? (
         <Button
           variant={"ghost"}
-          className="m-auto p-0"
+          className="m-auto p-0 text-neutral-400"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <ChevronLeft /> : <ChevronRight />}

@@ -32,7 +32,7 @@ async function UserChats() {
           legacyBehavior
           className={cn(
             buttonVariants({ variant: "default", size: "sm" }),
-            "dark:bg-muted dark:text-white dark:hover:bg-muted dark:hover:text-white",
+            "dark: dark:text-white dark:hover: dark:hover:text-white",
             "justify-start"
           )}
         >
@@ -48,7 +48,7 @@ async function UserChats() {
 export default function Sidebar({ className }: SidebarProps) {
   return (
     <div className={cn("h-screen", className)}>
-      <div className="flex flex-col h-full relative">
+      <div className="flex flex-col h-full relative border-r-[1px] border-neutral-300 dark:border-neutral-700">
         <div>
           <div className="my-4 ml-2">
             <Title />

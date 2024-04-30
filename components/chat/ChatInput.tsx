@@ -68,7 +68,7 @@ export default function ChatInput({
         onKeyDown={handleKeyDown}
         rows={rows}
         value={message}
-        className="text-xl resize-none min-h-min pr-16 bg-muted border border-slate-600 focus:border-none"
+        className="text-xl resize-none min-h-min pr-16  border border-slate-600 focus:border-none"
         placeholder="Type your message here..."
         onChange={(e) => setMessage(e.target.value)}
       />
