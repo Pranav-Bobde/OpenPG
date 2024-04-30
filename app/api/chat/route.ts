@@ -13,9 +13,16 @@ export const runtime = "edge";
 
 // POST /chat
 export async function POST(req: Request) {
-  const { messages } = await req.json();
+  let { messages } = await req.json();
 
   // Ask Azure OpenAI for a streaming chat completion given the prompt
+  messages = [
+    {
+      role: "system",
+      content: "Always return the response in markdown.",
+    },
+    ...messages,
+  ];
   const response = await client.streamChatCompletions(
     env.AZURE_OPENAI_MODEL,
     messages,
@@ -25,7 +32,7 @@ export async function POST(req: Request) {
   );
 
   // Convert the response into a friendly text-stream
-  const stream = OpenAIStream(response);
+  const stream = OpenAIStream(response as any);
   // Respond with the stream
   return new StreamingTextResponse(stream);
 }
