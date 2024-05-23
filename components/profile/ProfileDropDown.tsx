@@ -11,7 +11,7 @@ import { LogOut, Settings } from "lucide-react";
 
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "../ui/button";
-import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/dist/types";
+import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types";
 
 type ProfileDropDownProps = {
   user: KindeUser | null;

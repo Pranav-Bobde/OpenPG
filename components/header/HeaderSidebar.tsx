@@ -14,7 +14,7 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/dist/types";
+import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types";
 import { UserChatsLoader } from "../sidebar/UserChatsLoader";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
