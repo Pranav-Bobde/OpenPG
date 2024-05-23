@@ -8,6 +8,7 @@ export async function middleware(req: NextRequest) {
   console.log("mw user", user);
 
   if (!user) {
+    if (req.nextUrl.pathname == "/auth/login") return NextResponse.next();
     return NextResponse.redirect(new URL("/auth/login", req.url));
   }
 

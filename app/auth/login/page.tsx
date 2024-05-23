@@ -16,7 +16,7 @@ export default function page() {
 
         <span className="hidden md:block text-4xl">OpenPG</span>
       </div>
-      <div className="bg-black h-full flex flex-col items-center justify-start gap-4 md:basis-1/3 md:justify-center border-l-2 border-gray-500">
+      <div className="bg-black h-full flex flex-col items-center justify-start gap-4 md:basis-1/3 md:justify-center border-l-[1px] border-neutral-800">
         <span className="text-2xl mb-4 w-1/2 text-center">Get Started</span>
         <div className="flex flex-col w-1/2 items-center gap-4 md:flex-row md:w-full md:px-16">
           <Button className="min-w-fit w-full md:flex-1">
